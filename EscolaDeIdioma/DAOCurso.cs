@@ -10,7 +10,7 @@ using System.Threading.Tasks;
 
 namespace EscolaDeIdioma
 {
-    internal class DAOCategoria
+    internal class DAOCurso
     {
         public MySqlConnection conexao;//criando uma chave para a classe MYSQLCONNECTION
         public string dados;
@@ -22,10 +22,10 @@ namespace EscolaDeIdioma
         public int i;
         public int contador;
         public string msg;
-        public DAOCategoria()
+        public DAOCurso()
         {
             //conectar com o banco
-            conexao = new MySqlConnection("server=localhost;Database=biblioteca;UId=root;Password=;Convert Zero DateTime=True");
+            conexao = new MySqlConnection("server=localhost;Database=escolaidioma;UId=root;Password=;Convert Zero DateTime=True");
             try
             {
                 conexao.Open();//tenta abrir a conexão com o banco de dados
@@ -58,7 +58,7 @@ namespace EscolaDeIdioma
         //método para preencher o vetor
         public void PreencherVetor()
         {
-            string query = "select * from categoria";//comando SQL para acesso de dados
+            string query = "select * from curso";//comando SQL para acesso de dados
             //Instanciar os vetores
             codigo = new int[100];
             nome = new string[100];
@@ -128,7 +128,41 @@ namespace EscolaDeIdioma
         {
             try
             {
-                string query = $"update categoria set {campo} = '{novoDado}' where codigo = '{codigo}'";
+                string query = $"update curso set {campo} = '{novoDado}' where codigo = '{codigo}'";
+                //Executar o comando
+                MySqlCommand sql = new MySqlCommand(query, conexao);
+                string resultado = "" + sql.ExecuteNonQuery();
+                return resultado + " dado atualizado com sucesso :)";
+            }
+            catch (Exception erro)
+            {
+                return $"\n Algo deu errado :( \n\n {erro}";
+            }//fim do catch
+
+        }//fim do método
+
+        public string Atualizar(int codigo, string campo, int novoDado)
+        {
+            try
+            {
+                string query = $"update curso set {campo} = '{novoDado}' where codigo = '{codigo}'";
+                //Executar o comando
+                MySqlCommand sql = new MySqlCommand(query, conexao);
+                string resultado = "" + sql.ExecuteNonQuery();
+                return resultado + " dado atualizado com sucesso :)";
+            }
+            catch (Exception erro)
+            {
+                return $"\n Algo deu errado :( \n\n {erro}";
+            }//fim do catch
+
+        }//fim do método
+
+        public string Atualizar(int codigo, string campo, double novoDado)
+        {
+            try
+            {
+                string query = $"update curso set {campo} = '{novoDado}' where codigo = '{codigo}'";
                 //Executar o comando
                 MySqlCommand sql = new MySqlCommand(query, conexao);
                 string resultado = "" + sql.ExecuteNonQuery();
@@ -145,7 +179,7 @@ namespace EscolaDeIdioma
         {
             try
             {
-                string query = $"delete from categoria where codigo = '{codigo}'";
+                string query = $"delete from curso where codigo = '{codigo}'";
                 MySqlCommand sql = new MySqlCommand(query, conexao);
                 string resultado = "" + sql.ExecuteNonQuery();
                 return resultado + " dado excluido!";

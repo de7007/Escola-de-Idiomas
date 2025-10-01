@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace EscolaDeIdioma
 {
-    class Categoria
+    class Curso
     {
         //Declarei as Variaveis 
         private int codigo;
@@ -22,13 +22,13 @@ namespace EscolaDeIdioma
             this.valor = 0.0;
         }//Fim do construtor
 
-        public Categoria(int codigo, string nome, int cargaHoraria, double valor)
+        public Curso(int codigo, string nome, int cargaHoraria, double valor)
         {
             this.codigo = codigo;
             this.nome = nome;
             this.cargaHoraria = cargaHoraria;
             this.valor = valor;
-        }//fim do construtor categoria
+        }//fim do construtor Curso
 
         //metodo get e set
         public int ModificarCodigo

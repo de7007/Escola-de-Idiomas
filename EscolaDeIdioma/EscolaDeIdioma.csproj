@@ -96,8 +96,12 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="ControlCurso.cs" />
+    <Compile Include="ControlMenu.cs" />
+    <Compile Include="ControlProfessor.cs" />
     <Compile Include="Curso.cs" />
     <Compile Include="DAOCurso.cs" />
+    <Compile Include="DAOProfessor.cs" />
+    <Compile Include="professor.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

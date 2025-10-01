@@ -1,21 +1,29 @@
 {
   "Version": 1,
-  "WorkspaceRootPath": "C:\\Users\\andre.raraujo4\\source\\repos\\EscolaDeIdioma\\",
+  "WorkspaceRootPath": "C:\\Users\\andre.raraujo4\\source\\repos\\Escola-de-Idiomas\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{ABD0E59D-ABD3-46A4-9CA4-5FCC84FB28A5}|EscolaDeIdioma\\EscolaDeIdioma.csproj|C:\\Users\\andre.raraujo4\\source\\repos\\EscolaDeIdioma\\escoladeidioma\\controlcurso.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{ABD0E59D-ABD3-46A4-9CA4-5FCC84FB28A5}|EscolaDeIdioma\\EscolaDeIdioma.csproj|C:\\Users\\andre.raraujo4\\source\\repos\\Escola-de-Idiomas\\escoladeidioma\\controlmenu.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{ABD0E59D-ABD3-46A4-9CA4-5FCC84FB28A5}|EscolaDeIdioma\\EscolaDeIdioma.csproj|solutionrelative:escoladeidioma\\controlmenu.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{ABD0E59D-ABD3-46A4-9CA4-5FCC84FB28A5}|EscolaDeIdioma\\EscolaDeIdioma.csproj|C:\\Users\\andre.raraujo4\\source\\repos\\Escola-de-Idiomas\\escoladeidioma\\controlcurso.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{ABD0E59D-ABD3-46A4-9CA4-5FCC84FB28A5}|EscolaDeIdioma\\EscolaDeIdioma.csproj|solutionrelative:escoladeidioma\\controlcurso.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{ABD0E59D-ABD3-46A4-9CA4-5FCC84FB28A5}|EscolaDeIdioma\\EscolaDeIdioma.csproj|C:\\Users\\andre.raraujo4\\source\\repos\\EscolaDeIdioma\\escoladeidioma\\curso.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{ABD0E59D-ABD3-46A4-9CA4-5FCC84FB28A5}|EscolaDeIdioma\\EscolaDeIdioma.csproj|solutionrelative:escoladeidioma\\curso.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{ABD0E59D-ABD3-46A4-9CA4-5FCC84FB28A5}|EscolaDeIdioma\\EscolaDeIdioma.csproj|c:\\users\\andre.raraujo4\\source\\repos\\escola-de-idiomas\\escoladeidioma\\daoprofessor.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{ABD0E59D-ABD3-46A4-9CA4-5FCC84FB28A5}|EscolaDeIdioma\\EscolaDeIdioma.csproj|solutionrelative:escoladeidioma\\daoprofessor.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{ABD0E59D-ABD3-46A4-9CA4-5FCC84FB28A5}|EscolaDeIdioma\\EscolaDeIdioma.csproj|C:\\Users\\andre.raraujo4\\source\\repos\\EscolaDeIdioma\\escoladeidioma\\daocurso.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{ABD0E59D-ABD3-46A4-9CA4-5FCC84FB28A5}|EscolaDeIdioma\\EscolaDeIdioma.csproj|c:\\users\\andre.raraujo4\\source\\repos\\escola-de-idiomas\\escoladeidioma\\controlprofessor.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{ABD0E59D-ABD3-46A4-9CA4-5FCC84FB28A5}|EscolaDeIdioma\\EscolaDeIdioma.csproj|solutionrelative:escoladeidioma\\controlprofessor.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{ABD0E59D-ABD3-46A4-9CA4-5FCC84FB28A5}|EscolaDeIdioma\\EscolaDeIdioma.csproj|c:\\users\\andre.raraujo4\\source\\repos\\escola-de-idiomas\\escoladeidioma\\daocurso.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{ABD0E59D-ABD3-46A4-9CA4-5FCC84FB28A5}|EscolaDeIdioma\\EscolaDeIdioma.csproj|solutionrelative:escoladeidioma\\daocurso.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{ABD0E59D-ABD3-46A4-9CA4-5FCC84FB28A5}|EscolaDeIdioma\\EscolaDeIdioma.csproj|c:\\users\\andre.raraujo4\\source\\repos\\escoladeidioma\\escoladeidioma\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{ABD0E59D-ABD3-46A4-9CA4-5FCC84FB28A5}|EscolaDeIdioma\\EscolaDeIdioma.csproj|C:\\Users\\andre.raraujo4\\source\\repos\\Escola-de-Idiomas\\escoladeidioma\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{ABD0E59D-ABD3-46A4-9CA4-5FCC84FB28A5}|EscolaDeIdioma\\EscolaDeIdioma.csproj|solutionrelative:escoladeidioma\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
@@ -31,51 +39,78 @@
             {
               "$type": "Document",
               "DocumentIndex": 0,
-              "Title": "ControlCurso.cs",
-              "DocumentMoniker": "C:\\Users\\andre.raraujo4\\source\\repos\\EscolaDeIdioma\\EscolaDeIdioma\\ControlCurso.cs",
-              "RelativeDocumentMoniker": "EscolaDeIdioma\\ControlCurso.cs",
-              "ToolTip": "C:\\Users\\andre.raraujo4\\source\\repos\\EscolaDeIdioma\\EscolaDeIdioma\\ControlCurso.cs",
-              "RelativeToolTip": "EscolaDeIdioma\\ControlCurso.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAFAAAAARAAAAAAAAAA==",
+              "Title": "ControlMenu.cs",
+              "DocumentMoniker": "C:\\Users\\andre.raraujo4\\source\\repos\\Escola-de-Idiomas\\EscolaDeIdioma\\ControlMenu.cs",
+              "RelativeDocumentMoniker": "EscolaDeIdioma\\ControlMenu.cs",
+              "ToolTip": "C:\\Users\\andre.raraujo4\\source\\repos\\Escola-de-Idiomas\\EscolaDeIdioma\\ControlMenu.cs",
+              "RelativeToolTip": "EscolaDeIdioma\\ControlMenu.cs",
+              "ViewState": "AgIAAFYAAAAAAAAAAAAqwFcAAAAcAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-09-29T14:31:43.796Z",
+              "WhenOpened": "2025-10-01T11:40:36.387Z",
+              "IsPinned": true,
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "Curso.cs",
-              "DocumentMoniker": "C:\\Users\\andre.raraujo4\\source\\repos\\EscolaDeIdioma\\EscolaDeIdioma\\Curso.cs",
-              "RelativeDocumentMoniker": "EscolaDeIdioma\\Curso.cs",
-              "ToolTip": "C:\\Users\\andre.raraujo4\\source\\repos\\EscolaDeIdioma\\EscolaDeIdioma\\Curso.cs",
-              "RelativeToolTip": "EscolaDeIdioma\\Curso.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABAAAAASAAAAAAAAAA==",
+              "DocumentIndex": 3,
+              "Title": "ControlProfessor.cs",
+              "DocumentMoniker": "C:\\Users\\andre.raraujo4\\source\\repos\\Escola-de-Idiomas\\EscolaDeIdioma\\ControlProfessor.cs",
+              "RelativeDocumentMoniker": "EscolaDeIdioma\\ControlProfessor.cs",
+              "ToolTip": "C:\\Users\\andre.raraujo4\\source\\repos\\Escola-de-Idiomas\\EscolaDeIdioma\\ControlProfessor.cs",
+              "RelativeToolTip": "EscolaDeIdioma\\ControlProfessor.cs",
+              "ViewState": "AgIAADsAAAAAAAAAAAAiwEAAAABHAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-09-29T14:18:32.048Z",
+              "WhenOpened": "2025-10-01T14:23:28.322Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 2,
+              "Title": "DAOProfessor.cs",
+              "DocumentMoniker": "C:\\Users\\andre.raraujo4\\source\\repos\\Escola-de-Idiomas\\EscolaDeIdioma\\DAOProfessor.cs",
+              "RelativeDocumentMoniker": "EscolaDeIdioma\\DAOProfessor.cs",
+              "ToolTip": "C:\\Users\\andre.raraujo4\\source\\repos\\Escola-de-Idiomas\\EscolaDeIdioma\\DAOProfessor.cs",
+              "RelativeToolTip": "EscolaDeIdioma\\DAOProfessor.cs",
+              "ViewState": "AgIAAHQAAAAAAAAAAAAqwKYAAAAYAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-10-01T14:02:56.438Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
               "Title": "DAOCurso.cs",
-              "DocumentMoniker": "C:\\Users\\andre.raraujo4\\source\\repos\\EscolaDeIdioma\\EscolaDeIdioma\\DAOCurso.cs",
+              "DocumentMoniker": "C:\\Users\\andre.raraujo4\\source\\repos\\Escola-de-Idiomas\\EscolaDeIdioma\\DAOCurso.cs",
               "RelativeDocumentMoniker": "EscolaDeIdioma\\DAOCurso.cs",
-              "ToolTip": "C:\\Users\\andre.raraujo4\\source\\repos\\EscolaDeIdioma\\EscolaDeIdioma\\DAOCurso.cs",
+              "ToolTip": "C:\\Users\\andre.raraujo4\\source\\repos\\Escola-de-Idiomas\\EscolaDeIdioma\\DAOCurso.cs",
               "RelativeToolTip": "EscolaDeIdioma\\DAOCurso.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAAAYAAAAAAAAAA==",
+              "ViewState": "AgIAAGkAAAAAAAAAAAAYwLUAAAA1AAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-09-29T14:17:38.453Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 1,
+              "Title": "ControlCurso.cs",
+              "DocumentMoniker": "C:\\Users\\andre.raraujo4\\source\\repos\\Escola-de-Idiomas\\EscolaDeIdioma\\ControlCurso.cs",
+              "RelativeDocumentMoniker": "EscolaDeIdioma\\ControlCurso.cs",
+              "ToolTip": "C:\\Users\\andre.raraujo4\\source\\repos\\Escola-de-Idiomas\\EscolaDeIdioma\\ControlCurso.cs",
+              "RelativeToolTip": "EscolaDeIdioma\\ControlCurso.cs",
+              "ViewState": "AgIAACoAAAAAAAAAAADwvzIAAAAqAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-09-29T14:31:43.796Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
               "Title": "Program.cs",
-              "DocumentMoniker": "C:\\Users\\andre.raraujo4\\source\\repos\\EscolaDeIdioma\\EscolaDeIdioma\\Program.cs",
+              "DocumentMoniker": "C:\\Users\\andre.raraujo4\\source\\repos\\Escola-de-Idiomas\\EscolaDeIdioma\\Program.cs",
               "RelativeDocumentMoniker": "EscolaDeIdioma\\Program.cs",
-              "ToolTip": "C:\\Users\\andre.raraujo4\\source\\repos\\EscolaDeIdioma\\EscolaDeIdioma\\Program.cs",
+              "ToolTip": "C:\\Users\\andre.raraujo4\\source\\repos\\Escola-de-Idiomas\\EscolaDeIdioma\\Program.cs",
               "RelativeToolTip": "EscolaDeIdioma\\Program.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABAAAAAYAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA4AAAA0AAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-09-29T14:15:52.376Z",
               "EditorCaption": ""
