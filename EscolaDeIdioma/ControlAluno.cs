@@ -9,31 +9,31 @@ using System.Threading.Tasks;
 
 namespace EscolaDeIdioma
 {
-    class ControlProfessor
+    class ControlAluno
     {
-        private DAOProfessor dao;
-        public ControlProfessor()
+        private DAOAluno dao;
+        public ControlAluno()
         {
-            dao = new DAOProfessor();
+            dao = new DAOAluno();
         }//fim do construtor
 
-        public ControlProfessor(string nome, string idioma, string formacao, string telefone, int cursoCodigo)
+        public ControlAluno(string nome, long CPF, string email, string telefone, DateTime dtDeNasc, int cursoCodigo)
         {
-            this.dao = new DAOProfessor();
-            this.dao.Inserir(nome, idioma, formacao, telefone, cursoCodigo);
+            this.dao = new DAOAluno();
+            this.dao.Inserir(nome, CPF, email, telefone, dtDeNasc, cursoCodigo);
         }//fim do construtor
 
         //método que realiza o consultar tudo
         public void Imprimir()
         {
-            this.dao = new DAOProfessor();
+            this.dao = new DAOAluno();
             Console.WriteLine(this.dao.ConsultarTudo());
         }//fim do imprimir
 
         //Método para consulta por código
         public void ConsultarPorCodigo()
         {
-            this.dao = new DAOProfessor();
+            this.dao = new DAOAluno();
             Console.WriteLine("Informe o código que deseja buscar: ");
             int codigo = Convert.ToInt32(Console.ReadLine());
             //acionar o método consultar por código da DAO
@@ -43,12 +43,14 @@ namespace EscolaDeIdioma
         public void Atualizar()
         {
             //Criar a instancia no BD
-            this.dao = new DAOProfessor();
+            this.dao = new DAOAluno();
             Console.WriteLine("Escolha o que deseja atualizar" +
                               "\n1. Nome" +
-                              "\n2. Idioma" +
-                              "\n3. Formação" +
-                              "\n4. Telefone");
+                              "\n2. CPF" +
+                              "\n3. Email" +
+                              "\n4. Telefone" +
+                              "\n5. Data de nascimento" +
+                              "\n6. Codigo do Curso");
             int escolha = Convert.ToInt32(Console.ReadLine());
             //Pequena escolha
             switch (escolha)
@@ -64,24 +66,24 @@ namespace EscolaDeIdioma
                     Console.WriteLine(this.dao.Atualizar(codigo, "nome ", nome));
                     break;
                 case 2:
-                    Console.WriteLine("\n\nAtualizar Idioma");
+                    Console.WriteLine("\n\nAtualizar CPF");
                     Console.WriteLine("Informe o código de onde irá atualizar");
                     codigo = Convert.ToInt32(Console.ReadLine());
                     //nova descricao
-                    Console.WriteLine("Informe o novo idioma");
-                    string idioma = Console.ReadLine();
+                    Console.WriteLine("Informe o novo CPF");
+                    long CPF = Convert.ToInt64(Console.ReadLine());
                     //atualizar
-                    Console.WriteLine(this.dao.Atualizar(codigo, "Idioma ", idioma));
+                    Console.WriteLine(this.dao.Atualizar(codigo, "CPF ", CPF));
                     break;
                 case 3:
-                    Console.WriteLine("\n\nAtualizar Formação");
+                    Console.WriteLine("\n\nAtualizar Email");
                     Console.WriteLine("Informe o código de onde irá atualizar");
                     codigo = Convert.ToInt32(Console.ReadLine());
                     //nova descricao
-                    Console.WriteLine("Informe a nova formação");
-                    string formacao = Console.ReadLine();
+                    Console.WriteLine("Informe o novo Email");
+                    string email = Console.ReadLine();
                     //atualizar
-                    Console.WriteLine(this.dao.Atualizar(codigo, "Formação ", formacao));
+                    Console.WriteLine(this.dao.Atualizar(codigo, "Email ", email));
                     break;
                 case 4:
                     Console.WriteLine("\n\nAtualizar Telefone");
@@ -93,6 +95,22 @@ namespace EscolaDeIdioma
                     //atualizando
                     Console.WriteLine(this.dao.Atualizar(codigo, "Telefone ", telefone));
                     break;
+                case 5:
+                    Console.WriteLine("\n\nAtualizar Data de Nascimento");
+                    Console.WriteLine("Informe o código de onde irá atualizar");
+                    codigo = Convert.ToInt32(Console.ReadLine());
+                    Console.WriteLine("Informe a nova data de nascimento");
+                    DateTime dtDeNasc = Convert.ToDateTime(Console.ReadLine());
+                    Console.WriteLine(this.dao.Atualizar(codigo, "Data de nascimento", dtDeNasc));
+                    break;
+                case 6:
+                    Console.WriteLine("\n\nAtualizar Codigo do Curso");
+                    Console.WriteLine("Informe o código de onde irá atualizar");
+                    codigo = Convert.ToInt32(Console.ReadLine());
+                    Console.WriteLine("Informe o novo codigo do curso");
+                    int cursoCodigo = Convert.ToInt32(Console.ReadLine());
+                    Console.WriteLine(this.dao.Atualizar(codigo, "Codigo do Curso", cursoCodigo));
+                    break;
                 default:
                     Console.WriteLine("Impossível atualizar, algo deu errado!");
                     break;
@@ -101,7 +119,7 @@ namespace EscolaDeIdioma
 
         public void Excluir()
         {
-            this.dao = new DAOProfessor();
+            this.dao = new DAOAluno();
             Console.WriteLine("informe o código que deseja excluir");
             int codigo = Convert.ToInt32(Console.ReadLine());
             //chama o método para excluir

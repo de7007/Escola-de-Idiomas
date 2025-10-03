@@ -95,14 +95,18 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ControlAluno.cs" />
+    <Compile Include="ControlAvaliacao.cs" />
     <Compile Include="ControlCurso.cs" />
     <Compile Include="ControlMenu.cs" />
     <Compile Include="ControlProfessor.cs" />
     <Compile Include="Curso.cs" />
+    <Compile Include="DAOAluno.cs" />
+    <Compile Include="DAOAvaliacao.cs" />
     <Compile Include="DAOCurso.cs" />
     <Compile Include="DAOProfessor.cs" />
-    <Compile Include="professor.cs" />
     <Compile Include="Program.cs" />
+    <Compile Include="ProjetoAvaliacao.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

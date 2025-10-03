@@ -10,21 +10,20 @@ using System.Threading.Tasks;
 
 namespace EscolaDeIdioma
 {
-    internal class DAOProfessor
+    internal class DAOAvaliacao
     {
         public MySqlConnection conexao;//criando uma chave para a classe MYSQLCONNECTION
         public string dados;
         public string comando;
         public int[] codigo;
-        public string[] nome;
-        public string[] idioma;
-        public string[] formacao;
-        public string[] telefone;
-        public int[] cursoCodigo;
+        public int[] nota;
+        public DateTime[] dataAvaliacao;
+        public string[] observacao;
+        public int[] alunoCodigo;
         public int i;
         public int contador;
         public string msg;
-        public DAOProfessor()
+        public DAOAvaliacao()
         {
             //conectar com o banco
             conexao = new MySqlConnection("server=localhost;Database=escolaidioma;UId=root;Password=;Convert Zero DateTime=True");
@@ -40,44 +39,42 @@ namespace EscolaDeIdioma
             }//fim do try/catch
 
         }//fim do construtor
-        public void Inserir(string nome, string idioma, string formacao, string telefone, int cursoCodigo)
+        public void Inserir(int nota, DateTime dataAvaliacao, string observacao, int alunoCodigo)
         {
             try
             {
-                dados = $"('','{nome}', '{idioma}', '{formacao}', '{telefone}', '{cursoCodigo}')";
-                comando = $"Insert into professor(codigo, nome, idioma, formacao, telefone, cursoCodigo) values{dados}";
+                dados = $"('','{nota}', '{dataAvaliacao}', '{observacao}',  '{alunoCodigo}')";
+                comando = $"Insert into aluno(codigo, nota, dataAvaliacao, observacao, alunoCodigo) values{dados}";
                 //lançar os dados no banco
                 MySqlCommand sql = new MySqlCommand(comando, conexao);
                 string resultado = "" + sql.ExecuteNonQuery();//comando de inserção/Ações
-                Console.WriteLine($"Inserido com sucesso :) {resultado}");//visualizando o resultado 
+                Console.WriteLine($"Inserido com sucesso! {resultado}");//visualizando o resultado 
             }
             catch (Exception erro)
             {
-                Console.WriteLine($"Algo deu errado :(\n\n {erro}");
+                Console.WriteLine($"Algo deu Errado!\n\n {erro}");
             }
         }//fim do inserir
 
         //método para preencher o vetor
         public void PreencherVetor()
         {
-            string query = "select * from professor";//comando SQL para acesso de dados
+            string query = "select * from avaliacao";//comando SQL para acesso de dados
             //Instanciar os vetores
             codigo = new int[100];
-            nome = new string[100];
-            idioma = new string[100];
-            formacao = new string[100];
-            telefone = new string[100];
-            cursoCodigo = new int[100];
+            nota = new int[100];
+            dataAvaliacao = new DateTime[100];
+            observacao = new string[100];
+            alunoCodigo = new int[100];
 
             //reafirmar que eu quero preencher com 0 e "" os vetores
             for (i = 0; i < 100; i++)
             {
                 codigo[i] = 0;
-                nome[i] = "";
-                idioma[i] = "";
-                formacao[i] = "";
-                telefone[i] = "";
-                cursoCodigo[i] = 0;
+                nota[i] = 0;
+                dataAvaliacao[i] = new DateTime();
+                observacao[i] = "";
+                alunoCodigo[i] = 0;
             }//fim do for
 
             //executar o comando no BD 
@@ -91,11 +88,10 @@ namespace EscolaDeIdioma
             while (leitura.Read())
             {
                 codigo[i] = Convert.ToInt32(leitura["codigo"]);
-                nome[i] = leitura["nome"] + "";
-                idioma[i] = leitura["idioma"] + "";
-                formacao[i] = leitura["formacao"] + "";
-                telefone[i] = leitura["telefone"] + "";
-                cursoCodigo[i] = Convert.ToInt32(leitura["cursoCodigo"]);
+                nota[i] = Convert.ToInt32(leitura["nota"]);
+                dataAvaliacao[i] = Convert.ToDateTime(leitura["dataAvaliacao"]);
+                observacao[i] = leitura["telefone"] + "";
+                alunoCodigo[i] = Convert.ToInt32(leitura["cursoCodigo"]);
                 i++;//anda plelo vetor 
                 contador++;//conta exatamente quantos dados foram inseridos
             }//fim do while
@@ -111,7 +107,7 @@ namespace EscolaDeIdioma
             msg = "";//instanciando variavel
             for (i = 0; i < contador; i++)
             {
-                msg += $"\nCódigo: {codigo[i]} \n Nome: {nome[i]} \n Idioma: {idioma[i]} \n Formacao: {formacao[i]} \n  Telefone:{telefone[i]} Curso Codigo: {cursoCodigo[i]}";
+                msg += $"\nCódigo: {codigo[i]} \n Nota: {nota[i]} \n dataAvaliacao: {dataAvaliacao[i]} \n Observacao: {observacao[i]} \n  Aluno Codigo: {alunoCodigo[i]}";
             }//fim do for 
             //Mostrar todos os dados do BD
             return msg;
@@ -125,7 +121,7 @@ namespace EscolaDeIdioma
             {
                 if (this.codigo[i] == codigo)
                 {
-                    msg = $"\nCódigo: {this.codigo[i]} \nNome: {nome[i]} \n Idioma: {idioma[i]} \n Formacao: {formacao[i]} \n  Telefone:{telefone[i]} Curso Codigo: {cursoCodigo[i]}";
+                    msg = $"\nCódigo: {this.codigo[i]} \n Nota: {nota[i]} \n dataAvaliacao: {dataAvaliacao[i]} \n Observacao: {observacao[i]} \n  Aluno Codigo: {alunoCodigo[i]}";
                     return msg;
                 }//fim do if
             }//fim do for 
@@ -136,7 +132,7 @@ namespace EscolaDeIdioma
         {
             try
             {
-                string query = $"update professor set {campo} = '{novoDado}' where codigo = '{codigo}'";
+                string query = $"update avaliacao set {campo} = '{novoDado}' where codigo = '{codigo}'";
                 //Executar o comando
                 MySqlCommand sql = new MySqlCommand(query, conexao);
                 string resultado = "" + sql.ExecuteNonQuery();
@@ -153,7 +149,24 @@ namespace EscolaDeIdioma
         {
             try
             {
-                string query = $"update professor set {campo} = '{novoDado}' where codigo = '{codigo}'";
+                string query = $"update avaliacao set {campo} = '{novoDado}' where codigo = '{codigo}'";
+                //Executar o comando
+                MySqlCommand sql = new MySqlCommand(query, conexao);
+                string resultado = "" + sql.ExecuteNonQuery();
+                return resultado + " dado atualizado com sucesso :)";
+            }
+            catch (Exception erro)
+            {
+                return $"\n Algo deu errado :( \n\n {erro}";
+            }//fim do catch
+
+        }//fim do método
+ 
+        public string Atualizar(int codigo, string campo, DateTime novoDado)
+        {
+            try
+            {
+                string query = $"update avaliacao set {campo} = '{novoDado}' where codigo = '{codigo}'";
                 //Executar o comando
                 MySqlCommand sql = new MySqlCommand(query, conexao);
                 string resultado = "" + sql.ExecuteNonQuery();
@@ -170,7 +183,7 @@ namespace EscolaDeIdioma
         {
             try
             {
-                string query = $"delete from professor where codigo = '{codigo}'";
+                string query = $"delete from avaliacao where codigo = '{codigo}'";
                 MySqlCommand sql = new MySqlCommand(query, conexao);
                 string resultado = "" + sql.ExecuteNonQuery();
                 return resultado + " dado excluido!";

@@ -9,31 +9,31 @@ using System.Threading.Tasks;
 
 namespace EscolaDeIdioma
 {
-    class ControlProfessor
+    class ControlAvaliacao
     {
-        private DAOProfessor dao;
-        public ControlProfessor()
+        private DAOAvaliacao dao;
+        public ControlAvaliacao()
         {
-            dao = new DAOProfessor();
+            dao = new DAOAvaliacao();
         }//fim do construtor
 
-        public ControlProfessor(string nome, string idioma, string formacao, string telefone, int cursoCodigo)
+        public ControlAvaliacao(int nota, DateTime dataAvaliacao, string observacao, int alunoCodigo)
         {
-            this.dao = new DAOProfessor();
-            this.dao.Inserir(nome, idioma, formacao, telefone, cursoCodigo);
+            this.dao = new DAOAvaliacao();
+            this.dao.Inserir(nota, dataAvaliacao, observacao, alunoCodigo);
         }//fim do construtor
 
         //método que realiza o consultar tudo
         public void Imprimir()
         {
-            this.dao = new DAOProfessor();
+            this.dao = new DAOAvaliacao();
             Console.WriteLine(this.dao.ConsultarTudo());
         }//fim do imprimir
 
         //Método para consulta por código
         public void ConsultarPorCodigo()
         {
-            this.dao = new DAOProfessor();
+            this.dao = new DAOAvaliacao();
             Console.WriteLine("Informe o código que deseja buscar: ");
             int codigo = Convert.ToInt32(Console.ReadLine());
             //acionar o método consultar por código da DAO
@@ -43,55 +43,53 @@ namespace EscolaDeIdioma
         public void Atualizar()
         {
             //Criar a instancia no BD
-            this.dao = new DAOProfessor();
+            this.dao = new DAOAvaliacao();
             Console.WriteLine("Escolha o que deseja atualizar" +
-                              "\n1. Nome" +
-                              "\n2. Idioma" +
-                              "\n3. Formação" +
-                              "\n4. Telefone");
+                              "\n1. Nota" +
+                              "\n5. Data de avaliação" +
+                              "\n2. observacao" +
+                              "\n6. Codigo do Aluno");
             int escolha = Convert.ToInt32(Console.ReadLine());
             //Pequena escolha
             switch (escolha)
             {
                 case 1:
-                    Console.WriteLine("\n\nAtualizar nome");
+                    Console.WriteLine("\n\nAtualizar nota");
                     Console.WriteLine("Informe o código de onde irá atualizar");
                     int codigo = Convert.ToInt32(Console.ReadLine());
                     //nova descricao
-                    Console.WriteLine("Informe o novo nome");
-                    string nome = Console.ReadLine();
+                    Console.WriteLine("Informe a nova nota");
+                    int nota = Convert.ToInt32(Console.ReadLine());
                     //atualizar
-                    Console.WriteLine(this.dao.Atualizar(codigo, "nome ", nome));
+                    Console.WriteLine(this.dao.Atualizar(codigo, "Nota ", nota));
                     break;
                 case 2:
-                    Console.WriteLine("\n\nAtualizar Idioma");
+                    Console.WriteLine("\n\nAtualizar Data de avaliação");
                     Console.WriteLine("Informe o código de onde irá atualizar");
                     codigo = Convert.ToInt32(Console.ReadLine());
                     //nova descricao
-                    Console.WriteLine("Informe o novo idioma");
-                    string idioma = Console.ReadLine();
+                    Console.WriteLine("Informe a nova data de avalição");
+                    DateTime dataAvaliacao = Convert.ToDateTime(Console.ReadLine());
                     //atualizar
-                    Console.WriteLine(this.dao.Atualizar(codigo, "Idioma ", idioma));
+                    Console.WriteLine(this.dao.Atualizar(codigo, "Data de Avaliação", dataAvaliacao));
                     break;
                 case 3:
-                    Console.WriteLine("\n\nAtualizar Formação");
+                    Console.WriteLine("\n\nAtualizar Observação");
                     Console.WriteLine("Informe o código de onde irá atualizar");
                     codigo = Convert.ToInt32(Console.ReadLine());
                     //nova descricao
-                    Console.WriteLine("Informe a nova formação");
-                    string formacao = Console.ReadLine();
+                    Console.WriteLine("Informe a nova observação");
+                    string observacao = Console.ReadLine();
                     //atualizar
-                    Console.WriteLine(this.dao.Atualizar(codigo, "Formação ", formacao));
+                    Console.WriteLine(this.dao.Atualizar(codigo, "Observação ", observacao));
                     break;
-                case 4:
-                    Console.WriteLine("\n\nAtualizar Telefone");
+                case 6:
+                    Console.WriteLine("\n\nAtualizar Codigo do Aluno");
                     Console.WriteLine("Informe o código de onde irá atualizar");
                     codigo = Convert.ToInt32(Console.ReadLine());
-                    //nova descrição
-                    Console.WriteLine("Informe o novo telefone");
-                    string telefone = Console.ReadLine();
-                    //atualizando
-                    Console.WriteLine(this.dao.Atualizar(codigo, "Telefone ", telefone));
+                    Console.WriteLine("Informe o novo codigo do aluno");
+                    int alunoCodigo = Convert.ToInt32(Console.ReadLine());
+                    Console.WriteLine(this.dao.Atualizar(codigo, "Codigo do Aluno", alunoCodigo));
                     break;
                 default:
                     Console.WriteLine("Impossível atualizar, algo deu errado!");
@@ -101,7 +99,7 @@ namespace EscolaDeIdioma
 
         public void Excluir()
         {
-            this.dao = new DAOProfessor();
+            this.dao = new DAOAvaliacao();
             Console.WriteLine("informe o código que deseja excluir");
             int codigo = Convert.ToInt32(Console.ReadLine());
             //chama o método para excluir

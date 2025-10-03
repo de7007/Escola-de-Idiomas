@@ -10,12 +10,18 @@ namespace EscolaDeIdioma
     {
         //Declarar variavel que representara as classes control
         private ControlCurso controleCurso;
+        private ControlProfessor controleProfessor;
+        private ControlAluno controleAluno;
+        private ControlAvaliacao controleAvaliacao;
         private int opcaoPrincipal;
         private int opcaoGeral;
 
         public ControlMenu()
         {
             controleCurso = new ControlCurso();
+            controleProfessor = new ControlProfessor();
+            controleAluno = new ControlAluno();
+            controleAvaliacao = new ControlAvaliacao();
         }//fim do construtor
 
         //metodo GET e SET
@@ -60,6 +66,18 @@ namespace EscolaDeIdioma
                     case 1:
                         Console.WriteLine("Curso");
                         ExecutarCurso();
+                        break;
+                    case 2:
+                        Console.WriteLine("Professor");
+                        ExecutarProfessor();
+                        break;
+                    case 3:
+                        Console.WriteLine("Aluno");
+                        ExecutarAluno();
+                        break;
+                    case 4:
+                        Console.WriteLine("Avaliação");
+                        ExecutarAvaliacao();
                         break;
                     default:
                         Console.WriteLine("Opção Inválida!");
@@ -124,6 +142,157 @@ namespace EscolaDeIdioma
                         break;
                 }//fim do switch
             } while (ModificarOpcaoGeral != 0);
-        }
-    }
-}
+        }//fim do Curso
+        public void ExecutarProfessor()
+        {
+            do
+            {
+                Console.WriteLine("\n\nMenu Professor");
+                MenuGeral();
+                switch (ModificarOpcaoGeral)
+                {
+                    case 0:
+                        Console.WriteLine("Voltar ao menu anterior");
+                        break;
+                    case 1:
+                        Console.WriteLine("Cadastrar Professor: ");
+                        //solicitar os dados
+                        Console.WriteLine("Informe o nome do professor: ");
+                        string nome = Console.ReadLine();
+                        Console.WriteLine("Informe o idioma: ");
+                        string idioma = Console.ReadLine();
+                        Console.WriteLine("Informe a formação: ");
+                        string formacao = Console.ReadLine();
+                        Console.WriteLine("Informe o telefone");
+                        string telefone = Console.ReadLine();
+                        Console.WriteLine("Informe o codigo do curso");
+                        int cursoCodigo = Convert.ToInt32(Console.ReadLine());
+                        //criar a estrutura
+                        this.controleProfessor = new ControlProfessor(nome, idioma, formacao, telefone, cursoCodigo);
+                        break;
+                    case 2:
+                        Console.WriteLine("Consultar Professor");
+                        this.controleProfessor.Imprimir();
+                        break;
+                    case 3:
+                        Console.WriteLine("Consultar professor por código");
+                        this.controleProfessor.ConsultarPorCodigo();
+                        break;
+                    case 4:
+                        Console.WriteLine("Atualizar professor");
+                        this.controleProfessor.Atualizar();
+                        break;
+                    case 5:
+                        Console.WriteLine("Excluir professor");
+                        this.controleProfessor.Excluir();
+                        break;
+                    default:
+                        Console.WriteLine("Codigo informado não é válido!");
+                        break;
+                }//fim do switch
+            } while (ModificarOpcaoGeral != 0);
+        }//fim do executar Professor
+
+        public void ExecutarAluno()
+        {
+            do
+            {
+                Console.WriteLine("\n\nMenu Aluno");
+                MenuGeral();
+                switch (ModificarOpcaoGeral)
+                {
+                    case 0:
+                        Console.WriteLine("Voltar ao menu anterior");
+                        break;
+                    case 1:
+                        Console.WriteLine("Cadastrar Aluno: ");
+                        //solicitar os dados
+                        Console.WriteLine("Informe o nome do aluno: ");
+                        string nome = Console.ReadLine();
+                        Console.WriteLine("Informe o CPF: ");
+                        long CPF = Convert.ToInt64(Console.ReadLine());
+                        Console.WriteLine("Informe o email: ");
+                        string email = Console.ReadLine();
+                        Console.WriteLine("Informe o telefone");
+                        string telefone = Console.ReadLine();
+                        Console.WriteLine("Informe a data de nascimento");
+                        DateTime dtDeNasc = Convert.ToDateTime(Console.ReadLine());
+                        Console.WriteLine("Informe o codigo do curso");
+                        int cursoCodigo = Convert.ToInt32(Console.ReadLine());
+                        //criar a estrutura
+                        this.controleAluno = new ControlAluno(nome, CPF, email, telefone, dtDeNasc, cursoCodigo);
+                        break;
+                    case 2:
+                        Console.WriteLine("Consultar aluno");
+                        this.controleAluno.Imprimir();
+                        break;
+                    case 3:
+                        Console.WriteLine("Consultar aluno por código");
+                        this.controleAluno.ConsultarPorCodigo();
+                        break;
+                    case 4:
+                        Console.WriteLine("Atualizar aluno");
+                        this.controleAluno.Atualizar();
+                        break;
+                    case 5:
+                        Console.WriteLine("Excluir aluno");
+                        this.controleAluno.Excluir();
+                        break;
+                    default:
+                        Console.WriteLine("Codigo informado não é válido!");
+                        break;
+                }//fim do switch
+            } while (ModificarOpcaoGeral != 0);
+        }//fim do executar Aluno
+
+        public void ExecutarAvaliacao()
+        {
+            do
+            {
+                Console.WriteLine("\n\nMenu Avaliação");
+                MenuGeral();
+                switch (ModificarOpcaoGeral)
+                {
+                    case 0:
+                        Console.WriteLine("Voltar ao menu anterior");
+                        break;
+                    case 1:
+                        Console.WriteLine("Cadastrar Avaliação: ");
+                        //solicitar os dados
+                        Console.WriteLine("Informe a nota do aluno: ");
+                        string nome = Console.ReadLine();
+                        Console.WriteLine("Informe o observação: ");
+                        string observacao = Console.ReadLine();
+                        Console.WriteLine("Informe o telefone");
+                        string telefone = Console.ReadLine();
+                        Console.WriteLine("Informe a data de nascimento");
+                        DateTime dtDeNasc = Convert.ToDateTime(Console.ReadLine());
+                        Console.WriteLine("Informe o codigo do curso");
+                        int cursoCodigo = Convert.ToInt32(Console.ReadLine());
+                        //criar a estrutura
+                        this.controleAluno = new ControlAluno(nome, CPF, email, telefone, dtDeNasc, cursoCodigo);
+                        break;
+                    case 2:
+                        Console.WriteLine("Consultar aluno");
+                        this.controleAluno.Imprimir();
+                        break;
+                    case 3:
+                        Console.WriteLine("Consultar aluno por código");
+                        this.controleAluno.ConsultarPorCodigo();
+                        break;
+                    case 4:
+                        Console.WriteLine("Atualizar aluno");
+                        this.controleAluno.Atualizar();
+                        break;
+                    case 5:
+                        Console.WriteLine("Excluir aluno");
+                        this.controleAluno.Excluir();
+                        break;
+                    default:
+                        Console.WriteLine("Codigo informado não é válido!");
+                        break;
+                }//fim do switch
+            } while (ModificarOpcaoGeral != 0);
+        }//fim do executar Avaliacao
+    }//fim da classe
+}//fim do projeto
