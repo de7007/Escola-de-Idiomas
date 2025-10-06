@@ -16,7 +16,7 @@ namespace EscolaDeIdioma
         public string dados;
         public string comando;
         public int[] codigo;
-        public int[] nota;
+        public double[] nota;
         public DateTime[] dataAvaliacao;
         public string[] observacao;
         public int[] alunoCodigo;
@@ -39,12 +39,17 @@ namespace EscolaDeIdioma
             }//fim do try/catch
 
         }//fim do construtor
-        public void Inserir(int nota, DateTime dataAvaliacao, string observacao, int alunoCodigo)
+        public void Inserir(double nota, DateTime dataAvaliacao, string observacao, int alunoCodigo)
         {
             try
             {
-                dados = $"('','{nota}', '{dataAvaliacao}', '{observacao}',  '{alunoCodigo}')";
-                comando = $"Insert into aluno(codigo, nota, dataAvaliacao, observacao, alunoCodigo) values{dados}";
+                //Modificar
+                MySqlParameter parameter = new MySqlParameter();
+                parameter.ParameterName = "@Date";
+                parameter.MySqlDbType = MySqlDbType.Date;
+                parameter.Value = $"{dataAvaliacao.Year}-{dataAvaliacao.Month}-{dataAvaliacao.Day}";
+                dados = $"('','{nota}', '{parameter.Value}', '{observacao}',  '{alunoCodigo}')";
+                comando = $"Insert into avaliacao(codigo, nota, dataAvaliacao, observacao, alunoCodigo) values{dados}";
                 //lançar os dados no banco
                 MySqlCommand sql = new MySqlCommand(comando, conexao);
                 string resultado = "" + sql.ExecuteNonQuery();//comando de inserção/Ações
@@ -62,7 +67,7 @@ namespace EscolaDeIdioma
             string query = "select * from avaliacao";//comando SQL para acesso de dados
             //Instanciar os vetores
             codigo = new int[100];
-            nota = new int[100];
+            nota = new double[100];
             dataAvaliacao = new DateTime[100];
             observacao = new string[100];
             alunoCodigo = new int[100];
@@ -88,10 +93,10 @@ namespace EscolaDeIdioma
             while (leitura.Read())
             {
                 codigo[i] = Convert.ToInt32(leitura["codigo"]);
-                nota[i] = Convert.ToInt32(leitura["nota"]);
+                nota[i] = Convert.ToDouble(leitura["nota"]);
                 dataAvaliacao[i] = Convert.ToDateTime(leitura["dataAvaliacao"]);
-                observacao[i] = leitura["telefone"] + "";
-                alunoCodigo[i] = Convert.ToInt32(leitura["cursoCodigo"]);
+                observacao[i] = leitura["observacao"] + "";
+                alunoCodigo[i] = Convert.ToInt32(leitura["alunoCodigo"]);
                 i++;//anda plelo vetor 
                 contador++;//conta exatamente quantos dados foram inseridos
             }//fim do while
@@ -163,6 +168,23 @@ namespace EscolaDeIdioma
         }//fim do método
  
         public string Atualizar(int codigo, string campo, DateTime novoDado)
+        {
+            try
+            {
+                string query = $"update avaliacao set {campo} = '{novoDado}' where codigo = '{codigo}'";
+                //Executar o comando
+                MySqlCommand sql = new MySqlCommand(query, conexao);
+                string resultado = "" + sql.ExecuteNonQuery();
+                return resultado + " dado atualizado com sucesso :)";
+            }
+            catch (Exception erro)
+            {
+                return $"\n Algo deu errado :( \n\n {erro}";
+            }//fim do catch
+
+        }//fim do método
+
+        public string Atualizar(int codigo, string campo, double novoDado)
         {
             try
             {

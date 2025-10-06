@@ -71,7 +71,7 @@ namespace EscolaDeIdioma
                     Console.WriteLine("Informe a nova carga horária");
                     int cargaHoraria = Convert.ToInt32(Console.ReadLine());
                     //atualizar
-                    Console.WriteLine(this.dao.Atualizar(codigo, "carga Horaria", cargaHoraria));
+                    Console.WriteLine(this.dao.Atualizar(codigo, "cargaHoraria", cargaHoraria));
                     break;
                 case 3:
                     Console.WriteLine("\n\nAtualizar Valor");
@@ -81,7 +81,7 @@ namespace EscolaDeIdioma
                     Console.WriteLine("Informe o novo valor");
                     double valor = Convert.ToInt32(Console.ReadLine());
                     //atualizar
-                    Console.WriteLine(this.dao.Atualizar(codigo, "carga Horaria", valor));
+                    Console.WriteLine(this.dao.Atualizar(codigo, "valor", valor));
                     break;
                 default:
                     Console.WriteLine("Impossível atualizar, algo deu errado!");

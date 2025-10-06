@@ -111,7 +111,7 @@ namespace EscolaDeIdioma
             msg = "";//instanciando variavel
             for (i = 0; i < contador; i++)
             {
-                msg += $"\nCódigo: {codigo[i]} \n Nome: {nome[i]} \n Idioma: {idioma[i]} \n Formacao: {formacao[i]} \n  Telefone:{telefone[i]} Curso Codigo: {cursoCodigo[i]}";
+                msg += $"\nCódigo: {codigo[i]} \n Nome: {nome[i]} \n Idioma: {idioma[i]} \n Formacao: {formacao[i]} \n Telefone:{telefone[i]} \n Curso Codigo: {cursoCodigo[i]}";
             }//fim do for 
             //Mostrar todos os dados do BD
             return msg;

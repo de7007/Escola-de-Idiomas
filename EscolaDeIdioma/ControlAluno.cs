@@ -63,7 +63,7 @@ namespace EscolaDeIdioma
                     Console.WriteLine("Informe o novo nome");
                     string nome = Console.ReadLine();
                     //atualizar
-                    Console.WriteLine(this.dao.Atualizar(codigo, "nome ", nome));
+                    Console.WriteLine(this.dao.Atualizar(codigo, "nome", nome));
                     break;
                 case 2:
                     Console.WriteLine("\n\nAtualizar CPF");
@@ -73,7 +73,7 @@ namespace EscolaDeIdioma
                     Console.WriteLine("Informe o novo CPF");
                     long CPF = Convert.ToInt64(Console.ReadLine());
                     //atualizar
-                    Console.WriteLine(this.dao.Atualizar(codigo, "CPF ", CPF));
+                    Console.WriteLine(this.dao.Atualizar(codigo, "CPF", CPF));
                     break;
                 case 3:
                     Console.WriteLine("\n\nAtualizar Email");
@@ -83,7 +83,7 @@ namespace EscolaDeIdioma
                     Console.WriteLine("Informe o novo Email");
                     string email = Console.ReadLine();
                     //atualizar
-                    Console.WriteLine(this.dao.Atualizar(codigo, "Email ", email));
+                    Console.WriteLine(this.dao.Atualizar(codigo, "email", email));
                     break;
                 case 4:
                     Console.WriteLine("\n\nAtualizar Telefone");
@@ -93,7 +93,7 @@ namespace EscolaDeIdioma
                     Console.WriteLine("Informe o novo telefone");
                     string telefone = Console.ReadLine();
                     //atualizando
-                    Console.WriteLine(this.dao.Atualizar(codigo, "Telefone ", telefone));
+                    Console.WriteLine(this.dao.Atualizar(codigo, "telefone", telefone));
                     break;
                 case 5:
                     Console.WriteLine("\n\nAtualizar Data de Nascimento");
@@ -101,7 +101,7 @@ namespace EscolaDeIdioma
                     codigo = Convert.ToInt32(Console.ReadLine());
                     Console.WriteLine("Informe a nova data de nascimento");
                     DateTime dtDeNasc = Convert.ToDateTime(Console.ReadLine());
-                    Console.WriteLine(this.dao.Atualizar(codigo, "Data de nascimento", dtDeNasc));
+                    Console.WriteLine(this.dao.Atualizar(codigo, "dtDeNasc", dtDeNasc));
                     break;
                 case 6:
                     Console.WriteLine("\n\nAtualizar Codigo do Curso");
@@ -109,7 +109,7 @@ namespace EscolaDeIdioma
                     codigo = Convert.ToInt32(Console.ReadLine());
                     Console.WriteLine("Informe o novo codigo do curso");
                     int cursoCodigo = Convert.ToInt32(Console.ReadLine());
-                    Console.WriteLine(this.dao.Atualizar(codigo, "Codigo do Curso", cursoCodigo));
+                    Console.WriteLine(this.dao.Atualizar(codigo, "cursoCodigo", cursoCodigo));
                     break;
                 default:
                     Console.WriteLine("Impossível atualizar, algo deu errado!");

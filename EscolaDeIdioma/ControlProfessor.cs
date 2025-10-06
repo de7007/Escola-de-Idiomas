@@ -61,7 +61,7 @@ namespace EscolaDeIdioma
                     Console.WriteLine("Informe o novo nome");
                     string nome = Console.ReadLine();
                     //atualizar
-                    Console.WriteLine(this.dao.Atualizar(codigo, "nome ", nome));
+                    Console.WriteLine(this.dao.Atualizar(codigo, "nome", nome));
                     break;
                 case 2:
                     Console.WriteLine("\n\nAtualizar Idioma");
@@ -71,7 +71,7 @@ namespace EscolaDeIdioma
                     Console.WriteLine("Informe o novo idioma");
                     string idioma = Console.ReadLine();
                     //atualizar
-                    Console.WriteLine(this.dao.Atualizar(codigo, "Idioma ", idioma));
+                    Console.WriteLine(this.dao.Atualizar(codigo, "idioma", idioma));
                     break;
                 case 3:
                     Console.WriteLine("\n\nAtualizar Formação");
@@ -81,7 +81,7 @@ namespace EscolaDeIdioma
                     Console.WriteLine("Informe a nova formação");
                     string formacao = Console.ReadLine();
                     //atualizar
-                    Console.WriteLine(this.dao.Atualizar(codigo, "Formação ", formacao));
+                    Console.WriteLine(this.dao.Atualizar(codigo, "formacao", formacao));
                     break;
                 case 4:
                     Console.WriteLine("\n\nAtualizar Telefone");
@@ -91,7 +91,7 @@ namespace EscolaDeIdioma
                     Console.WriteLine("Informe o novo telefone");
                     string telefone = Console.ReadLine();
                     //atualizando
-                    Console.WriteLine(this.dao.Atualizar(codigo, "Telefone ", telefone));
+                    Console.WriteLine(this.dao.Atualizar(codigo, "telefone", telefone));
                     break;
                 default:
                     Console.WriteLine("Impossível atualizar, algo deu errado!");

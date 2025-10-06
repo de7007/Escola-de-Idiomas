@@ -260,33 +260,31 @@ namespace EscolaDeIdioma
                         Console.WriteLine("Cadastrar Avaliação: ");
                         //solicitar os dados
                         Console.WriteLine("Informe a nota do aluno: ");
-                        string nome = Console.ReadLine();
-                        Console.WriteLine("Informe o observação: ");
+                        double nota = Convert.ToDouble(Console.ReadLine());
+                        Console.WriteLine("Informe a data de avaliação: ");
+                        DateTime dataAvaliacao = Convert.ToDateTime(Console.ReadLine());
+                        Console.WriteLine("Informe a observação");
                         string observacao = Console.ReadLine();
-                        Console.WriteLine("Informe o telefone");
-                        string telefone = Console.ReadLine();
-                        Console.WriteLine("Informe a data de nascimento");
-                        DateTime dtDeNasc = Convert.ToDateTime(Console.ReadLine());
-                        Console.WriteLine("Informe o codigo do curso");
-                        int cursoCodigo = Convert.ToInt32(Console.ReadLine());
+                        Console.WriteLine("Informe o codigo do aluno");
+                        int alunoCodigo = Convert.ToInt32(Console.ReadLine());
                         //criar a estrutura
-                        this.controleAluno = new ControlAluno(nome, CPF, email, telefone, dtDeNasc, cursoCodigo);
+                        this.controleAvaliacao = new ControlAvaliacao(nota, dataAvaliacao, observacao, alunoCodigo);
                         break;
                     case 2:
-                        Console.WriteLine("Consultar aluno");
-                        this.controleAluno.Imprimir();
+                        Console.WriteLine("Consultar avaliação");
+                        this.controleAvaliacao.Imprimir();
                         break;
                     case 3:
-                        Console.WriteLine("Consultar aluno por código");
-                        this.controleAluno.ConsultarPorCodigo();
+                        Console.WriteLine("Consultar avaliação por código");
+                        this.controleAvaliacao.ConsultarPorCodigo();
                         break;
                     case 4:
-                        Console.WriteLine("Atualizar aluno");
-                        this.controleAluno.Atualizar();
+                        Console.WriteLine("Atualizar avaliação");
+                        this.controleAvaliacao.Atualizar();
                         break;
                     case 5:
-                        Console.WriteLine("Excluir aluno");
-                        this.controleAluno.Excluir();
+                        Console.WriteLine("Excluir avaliação");
+                        this.controleAvaliacao.Excluir();
                         break;
                     default:
                         Console.WriteLine("Codigo informado não é válido!");

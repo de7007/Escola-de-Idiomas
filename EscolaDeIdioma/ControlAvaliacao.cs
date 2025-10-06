@@ -17,7 +17,7 @@ namespace EscolaDeIdioma
             dao = new DAOAvaliacao();
         }//fim do construtor
 
-        public ControlAvaliacao(int nota, DateTime dataAvaliacao, string observacao, int alunoCodigo)
+        public ControlAvaliacao(double nota, DateTime dataAvaliacao, string observacao, int alunoCodigo)
         {
             this.dao = new DAOAvaliacao();
             this.dao.Inserir(nota, dataAvaliacao, observacao, alunoCodigo);
@@ -46,9 +46,9 @@ namespace EscolaDeIdioma
             this.dao = new DAOAvaliacao();
             Console.WriteLine("Escolha o que deseja atualizar" +
                               "\n1. Nota" +
-                              "\n5. Data de avaliação" +
-                              "\n2. observacao" +
-                              "\n6. Codigo do Aluno");
+                              "\n2. Data de avaliação" +
+                              "\n3. observacao" +
+                              "\n4. Codigo do Aluno");
             int escolha = Convert.ToInt32(Console.ReadLine());
             //Pequena escolha
             switch (escolha)
@@ -59,9 +59,9 @@ namespace EscolaDeIdioma
                     int codigo = Convert.ToInt32(Console.ReadLine());
                     //nova descricao
                     Console.WriteLine("Informe a nova nota");
-                    int nota = Convert.ToInt32(Console.ReadLine());
+                    double nota = Convert.ToDouble(Console.ReadLine());
                     //atualizar
-                    Console.WriteLine(this.dao.Atualizar(codigo, "Nota ", nota));
+                    Console.WriteLine(this.dao.Atualizar(codigo, "nota ", nota));
                     break;
                 case 2:
                     Console.WriteLine("\n\nAtualizar Data de avaliação");
@@ -71,7 +71,7 @@ namespace EscolaDeIdioma
                     Console.WriteLine("Informe a nova data de avalição");
                     DateTime dataAvaliacao = Convert.ToDateTime(Console.ReadLine());
                     //atualizar
-                    Console.WriteLine(this.dao.Atualizar(codigo, "Data de Avaliação", dataAvaliacao));
+                    Console.WriteLine(this.dao.Atualizar(codigo, "dataAvaliacao", dataAvaliacao));
                     break;
                 case 3:
                     Console.WriteLine("\n\nAtualizar Observação");
@@ -81,15 +81,15 @@ namespace EscolaDeIdioma
                     Console.WriteLine("Informe a nova observação");
                     string observacao = Console.ReadLine();
                     //atualizar
-                    Console.WriteLine(this.dao.Atualizar(codigo, "Observação ", observacao));
+                    Console.WriteLine(this.dao.Atualizar(codigo, "observacao", observacao));
                     break;
-                case 6:
+                case 4:
                     Console.WriteLine("\n\nAtualizar Codigo do Aluno");
                     Console.WriteLine("Informe o código de onde irá atualizar");
                     codigo = Convert.ToInt32(Console.ReadLine());
                     Console.WriteLine("Informe o novo codigo do aluno");
                     int alunoCodigo = Convert.ToInt32(Console.ReadLine());
-                    Console.WriteLine(this.dao.Atualizar(codigo, "Codigo do Aluno", alunoCodigo));
+                    Console.WriteLine(this.dao.Atualizar(codigo, "alunoCodigo", alunoCodigo));
                     break;
                 default:
                     Console.WriteLine("Impossível atualizar, algo deu errado!");

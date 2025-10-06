@@ -45,7 +45,12 @@ namespace EscolaDeIdioma
         {
             try
             {
-                dados = $"('','{nome}', '{CPF}','{email}', '{telefone}', '{dtDeNasc}',  '{cursoCodigo}')";
+                //Modificar
+                MySqlParameter parameter = new MySqlParameter();
+                parameter.ParameterName = "@Date";
+                parameter.MySqlDbType = MySqlDbType.Date;
+                parameter.Value = $"{dtDeNasc.Year}-{dtDeNasc.Month}-{dtDeNasc.Day}";
+                dados = $"('','{nome}', '{CPF}','{email}', '{telefone}', '{parameter.Value}',  '{cursoCodigo}')";
                 comando = $"Insert into aluno(codigo, nome, CPF, email, telefone, dtDeNasc, cursoCodigo) values{dados}";
                 //lançar os dados no banco
                 MySqlCommand sql = new MySqlCommand(comando, conexao);
@@ -115,7 +120,7 @@ namespace EscolaDeIdioma
             msg = "";//instanciando variavel
             for (i = 0; i < contador; i++)
             {
-                msg += $"\nCódigo: {codigo[i]} \n Nome: {nome[i]} \n CPF: {CPF[i]} \n Email: {email[i]} \n  Telefone: {telefone[i]} \n Data de Nascimento: {dtDeNasc[i]} \n Curso Codigo: {cursoCodigo[i]}";
+                msg += $"\nCódigo: {codigo[i]} \n Nome: {nome[i]} \n CPF: {CPF[i]} \n Email: {email[i]} \n Telefone: {telefone[i]} \n Data de Nascimento: {dtDeNasc[i]} \n Curso Codigo: {cursoCodigo[i]}";
             }//fim do for 
             //Mostrar todos os dados do BD
             return msg;
@@ -129,7 +134,7 @@ namespace EscolaDeIdioma
             {
                 if (this.codigo[i] == codigo)
                 {
-                    msg = $"\nCódigo: {this.codigo[i]} \nNome: {nome[i]} \n CPF: {CPF[i]} \n Email: {email[i]} \n  Telefone: {telefone[i]} \n Data de Nascimento: {dtDeNasc[i]} \n Curso Codigo: {cursoCodigo[i]}";
+                    msg = $"\nCódigo: {this.codigo[i]} \nNome: {nome[i]} \n CPF: {CPF[i]} \n Email: {email[i]} \n Telefone: {telefone[i]} \n Data de Nascimento: {dtDeNasc[i]} \n Curso Codigo: {cursoCodigo[i]}";
                     return msg;
                 }//fim do if
             }//fim do for 
